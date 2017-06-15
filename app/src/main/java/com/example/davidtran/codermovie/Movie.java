@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Movie {
 
+    private static final String POST_FIX = "https://image.tmdb.org/t/p/w500" ;
     @SerializedName("vote_count")
     @Expose
     private Integer voteCount;
@@ -98,7 +99,7 @@ public class Movie {
     }
 
     public String getPosterPath() {
-        return posterPath;
+        return POST_FIX + posterPath;
     }
 
     public void setPosterPath(String posterPath) {
@@ -130,7 +131,7 @@ public class Movie {
     }
 
     public String getBackdropPath() {
-        return backdropPath;
+        return POST_FIX + backdropPath;
     }
 
     public void setBackdropPath(String backdropPath) {
