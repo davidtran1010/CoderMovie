@@ -27,11 +27,13 @@ import butterknife.ButterKnife;
 public class MovieCustomAdapter extends ArrayAdapter<Movie>
 {
 public List<Movie> movieList;
+    boolean isLandscape;
     
 
     public MovieCustomAdapter(@NonNull Context context, List<Movie> movieList) {
         super(context,-1);
         this.movieList = movieList;
+        isLandscape = getContext().getResources().getBoolean(R.bool.isLandscape);
 
     }
 
@@ -68,11 +70,22 @@ public List<Movie> movieList;
         viewHolder.title.setText(movie.getTitle());
 
         viewHolder.overview.setText(movie.getOverview());
-        Glide.with(getContext())
-                .load(movie.getPosterPath())
-                .into(viewHolder.poster);
+
+        loadImage(movie,viewHolder,isLandscape);
         Log.d("My log: ",movie.getPosterPath());
         return convertView;
+    }
+    private void loadImage(Movie movie,ViewHolder viewHolder,boolean isLandscape){
+        if(!isLandscape) {
+            Glide.with(getContext())
+                    .load(movie.getPosterPath())
+                    .into(viewHolder.poster);
+        }
+        else{
+            Glide.with(getContext())
+                    .load(movie.getBackdropPath())
+                    .into(viewHolder.poster);
+        }
     }
     static class ViewHolder {
         @BindView(R.id.tv_title) TextView title;
