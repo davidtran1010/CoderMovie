@@ -9,11 +9,12 @@
 
     tools:context="com.example.davidtran.codermovie.MainActivity">
 
-    <ListView
-        android:id="@+id/lv_movie"
+    <FrameLayout
+        android:id="@+id/frag_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"></ListView>
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+
 </LinearLayout>

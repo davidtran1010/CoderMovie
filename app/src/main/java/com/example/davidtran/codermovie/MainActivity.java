@@ -1,6 +1,8 @@
 package com.example.davidtran.codermovie;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -19,42 +21,24 @@ import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.lv_movie)
-    ListView lvMovie;
 
-    List<Movie> movieList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.bind(this);
-
-        getData();
-    }
-
-
-    private void getData(){
-        Retrofit retrofit = RetrofitUtil.create();
-        Movieapi movieapi = retrofit.create(Movieapi.class);
-        movieapi.nowPlaying().enqueue(new Callback<NowPlaying>() {
-            @Override
-            public void onResponse(Call<NowPlaying> call, Response<NowPlaying> response) {
-                movieList = response.body().getMovies();
-                lvMovie.setAdapter(new MovieCustomAdapter(MainActivity.this,movieList));
-                for (Movie m: movieList) {
-
-                    Log.d("my log:",m.getTitle());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<NowPlaying> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
+        if (savedInstanceState == null) {
+            loadMovieList();
+        }
 
     }
 
+    private void loadMovieList() {
+
+        Fragment fragment = new MovieListFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frag_container, fragment).commit();
+
+    }
 
 }
