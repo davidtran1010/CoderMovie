@@ -3,16 +3,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <VideoView
-        android:id="@+id/vvDetail_Trailer"
-        android:layout_width="match_parent"
-        android:layout_height="215dp" />
+    <FrameLayout
+        android:id="@+id/youtubeFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
+
 
     <TextView
         android:id="@+id/tvDetail_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
+        android:textColor="@android:color/white"
         android:text="Title"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -21,6 +26,7 @@
         android:id="@+id/tvDetail_RDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
         android:paddingLeft="10dp"
         android:text="Release date:" />
 
@@ -28,13 +34,15 @@
         android:id="@+id/rbDetail_Rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:isIndicator="true"/>
+        android:theme="@style/RatingBar"
+        android:isIndicator="true"
+        android:paddingLeft="10dp" />
 
     <TextView
         android:id="@+id/tvDetail_Content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
         android:paddingLeft="10dp"
         android:text="Content" />
 </LinearLayout>

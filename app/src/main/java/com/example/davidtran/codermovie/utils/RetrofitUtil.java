@@ -1,4 +1,6 @@
-package com.example.davidtran.codermovie;
+package com.example.davidtran.codermovie.utils;
+
+import com.example.davidtran.codermovie.BuildConfig;
 
 import java.io.IOException;
 
@@ -32,7 +34,7 @@ public class RetrofitUtil {
                         Request request = chain.request();
                         HttpUrl url = request.url()
                                 .newBuilder()
-                                .addQueryParameter("api_key",BuildConfig.MOVIE_API_KEY)
+                                .addQueryParameter("api_key", BuildConfig.MOVIE_API_KEY)
                                 .build();
                         request = request.newBuilder()
                                 .url(url)

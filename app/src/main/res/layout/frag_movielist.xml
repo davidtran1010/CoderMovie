@@ -4,11 +4,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ListView
         android:id="@+id/lv_movie"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
+        android:background="@android:color/black"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"></ListView>
 

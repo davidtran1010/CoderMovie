@@ -1,4 +1,4 @@
-package com.example.davidtran.codermovie;
+package com.example.davidtran.codermovie.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

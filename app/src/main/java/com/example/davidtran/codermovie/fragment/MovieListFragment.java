@@ -1,4 +1,4 @@
-package com.example.davidtran.codermovie;
+package com.example.davidtran.codermovie.fragment;
 
 
 import android.os.Bundle;
@@ -11,6 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.davidtran.codermovie.MovieCustomAdapter;
+import com.example.davidtran.codermovie.Movieapi;
+import com.example.davidtran.codermovie.NowPlaying;
+import com.example.davidtran.codermovie.R;
+import com.example.davidtran.codermovie.model.Movie;
+import com.example.davidtran.codermovie.utils.RetrofitUtil;
 
 import java.util.List;
 
@@ -74,7 +81,7 @@ public class MovieListFragment extends Fragment {
         Fragment fragment = new MovieDetailFragment();
         fragment.setArguments(bundle);
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frag_container, fragment).commit();
+        transaction.replace(R.id.frag_container, fragment).addToBackStack(null).commit();
     }
 
 }

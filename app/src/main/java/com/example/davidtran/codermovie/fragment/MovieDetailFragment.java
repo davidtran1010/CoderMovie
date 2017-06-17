@@ -1,15 +1,19 @@
-package com.example.davidtran.codermovie;
+package com.example.davidtran.codermovie.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.VideoView;
+
+import com.example.davidtran.codermovie.R;
+import com.example.davidtran.codermovie.fragment.YoutubeFragment;
+import com.example.davidtran.codermovie.model.Movie;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,7 +24,7 @@ import butterknife.ButterKnife;
 
 public class MovieDetailFragment extends Fragment {
     Movie movie;
-    @BindView(R.id.vvDetail_Trailer) VideoView vvTrailer;
+
     @BindView(R.id.tvDetail_Title) TextView tvTitle;
     @BindView(R.id.tvDetail_Content) TextView tvOverview;
     @BindView(R.id.tvDetail_RDate) TextView tvRDate;
@@ -32,6 +36,7 @@ public class MovieDetailFragment extends Fragment {
         movie = getArguments().getParcelable("movie_item");
         ButterKnife.bind(this,view);
         bindDetailMovie();
+        loadVideo();
         return view;
     }
     private void bindDetailMovie(){
@@ -43,4 +48,12 @@ public class MovieDetailFragment extends Fragment {
         rbRate.setRating(Float.valueOf(String.valueOf(movie.getVoteAverage())));
 
     }
+    private void loadVideo(){
+        YoutubeFragment fragment = new YoutubeFragment();
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        manager.beginTransaction()
+                .replace(R.id.youtubeFragment, fragment)
+                .commit();
+    }
+
 }
