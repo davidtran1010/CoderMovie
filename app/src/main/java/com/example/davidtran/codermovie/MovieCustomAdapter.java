@@ -12,11 +12,13 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.davidtran.codermovie.model.Movie;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 /**
  * Created by davidtran on 6/15/17.
@@ -75,14 +77,18 @@ public List<Movie> movieList;
     }
     private void loadImage(Movie movie,ViewHolder viewHolder,boolean isLandscape){
         if(!isLandscape) {
-            Glide.with(getContext())
+            Picasso.with(getContext()).load(movie.getPosterPath())
+                    .transform(new RoundedCornersTransformation(10, 10)).into(viewHolder.poster);
+           /* Glide.with(getContext())
                     .load(movie.getPosterPath())
-                    .into(viewHolder.poster);
+                    .into(viewHolder.poster);*/
         }
         else{
-            Glide.with(getContext())
+            Picasso.with(getContext()).load(movie.getBackdropPath())
+                    .transform(new RoundedCornersTransformation(10, 10)).into(viewHolder.poster);
+          /*  Glide.with(getContext())
                     .load(movie.getBackdropPath())
-                    .into(viewHolder.poster);
+                    .into(viewHolder.poster);*/
         }
     }
     static class ViewHolder {
