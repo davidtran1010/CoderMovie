@@ -52,9 +52,9 @@ Using Youtube API Player take more time to study
  + Object conversion to request body (e.g., JSON, protocol buffers)
  + Multipart request body and file upload
 - [Picasso](http://square.github.io/picasso/) - Image loading and caching library for Android
-- [ButterKnife] (http://jakewharton.github.io/butterknife) - Finding and automatically Casting the corresponding view in your layout.
-- [Google Gson] (https://github.com/google/gson) - Converting Java Objects into their JSON representation
-- [Youtube API player] - Play youtube video url throught API youtube app
+- [ButterKnife](http://jakewharton.github.io/butterknife) - Finding and automatically Casting the corresponding view in your layout.
+- [Google Gson](https://github.com/google/gson) - Converting Java Objects into their JSON representation
+- [Youtube Androi API Player](https://developers.google.com/youtube/android/player/downloads/) - Play youtube video url throught API youtube app
 ## License
 
     Copyright [2017] [David Tran 's copyright]
