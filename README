@@ -38,19 +38,25 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/7RSD7U6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/J3PeFAt.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Using Youtube API Player take more time to study
 
 ## Open-source libraries used
 
-- [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
+- [Retrofit2](http://square.github.io/retrofit/) 
+ + URL parameter replacement and query parameter support
+ + Object conversion to request body (e.g., JSON, protocol buffers)
+ + Multipart request body and file upload
 - [Picasso](http://square.github.io/picasso/) - Image loading and caching library for Android
-
+- [ButterKnife] (http://jakewharton.github.io/butterknife) - Finding and automatically Casting the corresponding view in your layout.
+- [Google Gson] (https://github.com/google/gson) - Converting Java Objects into their JSON representation
+- [Youtube API player] - Play youtube video url throught API youtube app
 ## License
 
     Copyright [2017] [David Tran 's copyright]
