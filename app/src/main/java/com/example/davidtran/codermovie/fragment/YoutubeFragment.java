@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.davidtran.codermovie.BuildConfig;
 import com.example.davidtran.codermovie.R;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -19,10 +20,10 @@ import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 
 public class YoutubeFragment extends Fragment {
 
-    private static final String API_KEY = "20170617092337";
+    private static final String API_KEY = BuildConfig.YOUTUBE_API_KEY;
 
 
-    private static String VIDEO_ID = "6as8ahAr1Uc";
+    private static String VIDEO_ID = "0WWzgGyAH6Y";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

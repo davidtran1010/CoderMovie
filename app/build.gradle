@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField('String','MOVIE_API_KEY','"a07e22bc18f5cb106bfe4cc1f83ad8ed"')
+        buildConfigField('String','YOUTUBE_API_KEY','"AIzaSyAGjIH4DzVWltofAWT1X07Jvq5kDApA0WY"')
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
